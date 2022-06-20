@@ -20,19 +20,15 @@ print("---------------------------------------------------------------------")
 user_input = input("input number: ")
 
 if user_input == '1' :
-
-    image= len(img.shape)
-    image_gray = len(gray.shape)
-
-    if image > image_gray:
-
+    imgs = len(img.shape)
+    grays = len(gray.shape)
+    if imgs > grays:
         cv.imshow("colored", img)
         cv.waitKey(0)
-
     else:
-
         exit()
 
+    
 elif user_input == '2':
 
     x = int(input("x-axis: "))
@@ -54,10 +50,11 @@ elif user_input == '3':
         pixel = int(input("Pixel Value: "))
         c=bgr-1
         img.itemset((x, y, c), pixel)
-
+        break
     print(img[x, y])
     cv.imshow("COLORED IMAGE", img)
     cv.waitKey(0)
+      
 
 elif user_input == '4':
 
